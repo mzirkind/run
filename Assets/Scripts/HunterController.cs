@@ -11,4 +11,18 @@ public class HunterController : MonoBehaviour
     {
         _agent.SetDestination(_target.position);
     }
+
+    private void LateUpdate()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            _agent.SetDestination(_target.position);
+        }
+
+        if (_agent.stoppingDistance > _agent.remainingDistance)
+        {
+            _agent.ResetPath();
+        }
+    }
+    
 }

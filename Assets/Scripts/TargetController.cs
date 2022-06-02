@@ -11,7 +11,9 @@ public class TargetController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            transform.position = GetRandomPoint(Vector3.zero, maxDistanceFromCenter);
+            var newPos = GetRandomPoint(Vector3.zero, maxDistanceFromCenter);
+            newPos.y = transform.position.y;
+            transform.position = newPos;
         }
     }
 
